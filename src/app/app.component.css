@@ -26,7 +26,7 @@ body {
   #campecino {
     position: absolute;
     right: 10%;
-    bottom: 10%;
+    bottom: 20%;
     height: 20%;
     transition: transform 1s;
   }
@@ -37,33 +37,54 @@ body {
   
   #mensaje {
     position: absolute;
-    right: 20%;
-    bottom: 50%;
-    background: white;
-    border-radius: 10px;
-    padding: 10px;
-    animation: aparecer 1s ease-in-out;
-  }
-  
-  @keyframes aparecer {
-    from {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-  
-  .viñeta {
-    position: absolute;
     background: white;
     border: 2px solid black;
     border-radius: 5px;
     padding: 5px;
     transform: translateY(-150%);
     white-space: nowrap;
+  }
+  
+  .opciones {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .opcion {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-align: center;
+  }
+  
+  .opcion:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+  }
+  
+  .opcion-rana {
+    background-color: #e3f2fd;
+  }
+  
+  .opcion-libelula {
+    background-color: #e8f5e9;
+  }
+  
+  .opcion-grillo {
+    background-color: #fff3e0;
   }
   
   #rana {
@@ -82,41 +103,5 @@ body {
     position: absolute;
     left: 60%;
     bottom: 20%;
-  }
-  
-  .thought-bubble {
-    position: absolute;
-    top: -100px;
-    left: -50px;
-    width: 200px;
-    padding: 10px;
-    border-radius: 50%;
-    border: 2px solid black;
-    background: white;
-  }
-  
-  .thought-bubble:after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top: 10px solid white;
-  }
-  
-  .card {
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 0;
-    cursor: pointer;
-    transition: transform 0.3s;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
   }
   
