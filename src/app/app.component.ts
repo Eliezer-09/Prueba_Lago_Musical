@@ -20,6 +20,7 @@ export class AppComponent {
   currentSonidoIndex = 0;
   mensaje = '';
   showMensaje = false;
+  currentAnimal: Animal | null = null;
 
   constructor(private renderer: Renderer2) {}
 
@@ -27,10 +28,12 @@ export class AppComponent {
     this.currentSonidos = this.sonidos[animal];
     this.currentSonidoIndex = 0;
     this.campecinoFrente = true;
+    this.currentAnimal = animal;
   }
 
   ocultarSonidos() {
     this.currentSonidos = [];
+    this.currentAnimal = null;
   }
 
   reproducirSonido(sonido: string) {
@@ -49,6 +52,7 @@ export class AppComponent {
     } else {
       this.campecinoFrente = true;
       this.showMensaje = false;
+      this.ocultarSonidos();
     }
   }
 }

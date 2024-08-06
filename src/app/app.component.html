@@ -1,18 +1,36 @@
 <div id="fondo-lago"></div>
-<div id="franja-sonidos">
-  <div class="animal" (mouseover)="mostrarSonidos('rana')" (mouseout)="ocultarSonidos()">
-    <img src="/assets/rana.png" alt="Rana">
+<div id="rana" class="animal" (click)="mostrarSonidos('rana')">
+  <img src="assets/rana.png" alt="Rana">
+  <div *ngIf="currentSonidos.length && currentAnimal === 'rana'" class="viñeta">
+    <span *ngFor="let sonido of sonidos['rana']; let i = index" (click)="reproducirSonido(sonido)">{{ sonido }}<br></span>
   </div>
-  <div class="animal" (mouseover)="mostrarSonidos('libelula')" (mouseout)="ocultarSonidos()">
-    <img src="/assets/libelula.png" alt="Libélula">
+</div>
+<div id="libelula" class="animal" (click)="mostrarSonidos('libelula')">
+  <img src="assets/libelula.png" alt="Libélula">
+  <div *ngIf="currentSonidos.length && currentAnimal === 'libelula'" class="viñeta">
+    <span *ngFor="let sonido of sonidos['libelula']; let i = index" (click)="reproducirSonido(sonido)">{{ sonido }}<br></span>
   </div>
-  <div class="animal" (mouseover)="mostrarSonidos('grillo')" (mouseout)="ocultarSonidos()">
-    <img src="/assets/grillo.png" alt="Grillo">
+</div>
+<div id="grillo" class="animal" (click)="mostrarSonidos('grillo')">
+  <img src="assets/grillo.png" alt="Grillo">
+  <div *ngIf="currentSonidos.length && currentAnimal === 'grillo'" class="viñeta">
+    <span *ngFor="let sonido of sonidos['grillo']; let i = index" (click)="reproducirSonido(sonido)">{{ sonido }}<br></span>
   </div>
 </div>
 <div id="campecino" [ngClass]="{'de-espalda': !campecinoFrente}">
-  <img *ngIf="campecinoFrente" src="/assets/campecino-frente.png" alt="Campesino de frente">
-  <img *ngIf="!campecinoFrente" src="/assets/campecino-espalda.png" alt="Campesino de espalda">
+  <img *ngIf="campecinoFrente" src="assets/campecino-frente.png" alt="Campesino de frente">
+  <img *ngIf="!campecinoFrente" src="assets/campecino-espalda.png" alt="Campesino de espalda">
+  <div class="thought-bubble" *ngIf="!showMensaje">
+    <div class="card" *ngFor="let sonido of sonidos['rana']" (click)="reproducirSonido(sonido)">
+      Rana: {{ sonido }}
+    </div>
+    <div class="card" *ngFor="let sonido of sonidos['libelula']" (click)="reproducirSonido(sonido)">
+      Libélula: {{ sonido }}
+    </div>
+    <div class="card" *ngFor="let sonido of sonidos['grillo']" (click)="reproducirSonido(sonido)">
+      Grillo: {{ sonido }}
+    </div>
+  </div>
 </div>
 <div *ngIf="showMensaje" id="mensaje">
   <span>{{ mensaje }}</span>
