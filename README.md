@@ -32,6 +32,14 @@ Para iniciar una secuencia musical:
 - HTML5
 - CSS3
 
+## Estructura del Proyecto
+- `src/`: Contiene el código fuente del proyecto.
+- `app/`: Contiene los componentes principales de la aplicación.
+ - `app.component.ts`: Archivo TypeScript principal que maneja la lógica de la aplicación.
+ - `app.component.html`: Archivo HTML que define la estructura de la interfaz de usuario.
+ - `app.component.css`: Archivo CSS que contiene los estilos de la aplicación.
+- `assets/`: Contiene las imágenes utilizadas en la aplicación.
+
 ## Cómo ejecutar el proyecto localmente
 Para ejecutar 'El Lago Musical' en su máquina local, siga estos pasos:
 1. Clone el repositorio de GitHub:
@@ -44,11 +52,20 @@ npm install
 ng serve
 5. Abra un navegador y visite `http://localhost:4200/` para ver la aplicación en acción.
 
-## Estructura del Proyecto
-- `src/`: Contiene el código fuente del proyecto.
-- `app/`: Contiene los componentes principales de la aplicación.
- - `app.component.ts`: Archivo TypeScript principal que maneja la lógica de la aplicación.
- - `app.component.html`: Archivo HTML que define la estructura de la interfaz de usuario.
- - `app.component.css`: Archivo CSS que contiene los estilos de la aplicación.
-- `assets/`: Contiene las imágenes utilizadas en la aplicación.
+## Docker
+
+### Construir y Ejecutar con Docker
+
+Para construir la imagen Docker y ejecutar la aplicación en un contenedor, sigue estos pasos:
+
+1. **Construir la imagen Docker**:
+   ```bash
+   docker build -t lago-musical .
+
+2. **Ejecutar la imagen Docker:**:
+    ```bash
+    docker run -d -p 80:80 lago-musical
+
+3. **Ejecutar la imagen Docker**
+Abre tu navegador y visita **http://localhost** para ver la aplicación en acción.
 
